@@ -12,139 +12,155 @@
 </head>
 
 <body>
-  <section class="todoapp" id="app">
-    <header class="header">
-     <!-- 
-        Mustache 插值语法不能用于 HTML 属性
-        当需要动态绑定实例属性成员的时候，需要使用 v-bind:属性名称="动态数据"
-        v-bind:属性="JavaScript 表达式" 这里要把这个值作为 JavaScript 去执行，然后将结果作为属性的值
-        v-bind:属性="JavaScript 表达式" 和 {{ JavaScript 表达式 }} 解析行为一致
-        如果把 v-bind 去除，例如 属性="无论写什么都是字符串"
-        结论：在 Vue 中都是通过 v-bind 去动态绑定 HTML 属性的
-        示例：<a v-bind:href="'users/?id=' + foo">查看用户</a>
-        简写方式：   :属性名="表达式"
-        到此为止：在 Vue 中，只有 v-on 和 v-bind 有简写，其他都没有
-      -->
-      <h1>todos</h1>
-      <!-- 
-        在 Vue 中，使用 v-on 指令来注册 DOM 事件
-        语法：v-on:原生的DOM事件名称
-        例如：v-on:click、v-on:dblclick、v-on:mouseover、v-on:focus
-        它的简写是：@DOM事件名
-        例如：@click="处理函数"、@blur="事件处理函数"
-        这里需要注册键盘的 keyup 事件
-       -->
-      <input
-        class="new-todo"
-        @keyup.enter="addTodo"
-        placeholder="What needs to be done?"
-        autofocus>
-    </header>
-    <!-- 
-      v-if 和 v-show 都可以用来控制元素的显示和隐藏
-      在 vue 中一共有四个指令用来控制元素显示和隐藏：
-        v-show
-        v-if
-          v-else-if
-          v-else
-        v-if 支持使用 template 标签控制多个元素的渲染，而最终渲染结果不包含 template 节点
+<section class="todoapp" id="app">
+  <header class="header">
+    <!--
+       Mustache 插值语法不能用于 HTML 属性
+       当需要动态绑定实例属性成员的时候，需要使用 v-bind:属性名称="动态数据"
+       v-bind:属性="JavaScript 表达式" 这里要把这个值作为 JavaScript 去执行，然后将结果作为属性的值
+       v-bind:属性="JavaScript 表达式" 和 {{ JavaScript 表达式 }} 解析行为一致
+       如果把 v-bind 去除，例如 属性="无论写什么都是字符串"
+       结论：在 Vue 中都是通过 v-bind 去动态绑定 HTML 属性的
+       示例：<a v-bind:href="'users/?id=' + foo">查看用户</a>
+       简写方式：   :属性名="表达式"
+       到此为止：在 Vue 中，只有 v-on 和 v-bind 有简写，其他都没有
      -->
-    <template v-if="todos.length !== 0">
-      <!-- This section should be hidden by default and shown when there are todos -->
-      <section class="main">
-        <input
-          id="toggle-all"
-          class="toggle-all"
-          @click="toggleAll"
-          type="checkbox">
-        <label for="toggle-all">Mark all as complete</label>
-        <ul class="todo-list">
-          <!-- These are here just to show the structure of the list items -->
-          <!-- List items should get the class `editing` when editing and `completed` when marked as completed -->
-          <!-- 
-          li 就是每一个任务项
-          li 有三种样式状态：
-            无样式
-            completed 已完成
-            editing 编辑状态
-         -->
-          <!-- 
-            <li v-bind:class="todo.done ? 'completed' : ''" v-for="todo in todos">
-            Vue 专门增强了 class 的处理
-          -->
-          <li
-            :class="{completed: todo.done, editing: todo === currentEdit}"
-            v-for="todo in todos">
-            <div class="view">
-              <input class="toggle" type="checkbox" v-model="todo.done">
-              <label @dblclick="getEditting(todo)">{{ todo.title }}</label>
-              <button class="destroy" @click="removeTodo(todo.id)"></button>
-            </div>
-            <!-- 
-              v-bind 只能绑定数据，不能影响数据
-              v-model 才是双向绑定，视图可以影响数据，数据有可以影响视图
-             -->
-            <!-- <input class="edit" v-bind:value="todo.title"> -->
-            <!-- 
-              这里就是当敲回车或者失去焦点的时候，将当前任务项 todo 的 title 赋值为当前这个文本框的 value，同时去除编辑的样式
-              当取消编辑的时候，我只需要去除编辑的样式即可
-             -->
-            <input
-              class="edit"
-              :value="todo.title"
-              @keyup.esc="cancelEdit"
-              @keyup.enter="editTodo(todo, $event)"
-              @blur="editTodo(todo, $event)">
-          </li>
-        </ul>
-      </section>
-      <!-- This footer should hidden by default and shown when there are todos -->
-      <footer class="footer">
-        <!-- This should be `0 items left` by default -->
-        <span class="todo-count">
-          <!-- 
+    <!-- <input type="checkbox" v-model="seen"> -->
+    <h1 v-my-show="seen">todos</h1>
+    <!--
+      在 Vue 中，使用 v-on 指令来注册 DOM 事件
+      语法：v-on:原生的DOM事件名称
+      例如：v-on:click、v-on:dblclick、v-on:mouseover、v-on:focus
+      它的简写是：@DOM事件名
+      例如：@click="处理函数"、@blur="事件处理函数"
+      这里需要注册键盘的 keyup 事件
+     -->
+    <input
+      class="new-todo"
+      @keyup.enter="addTodo"
+      placeholder="What needs to be done?"
+      v-focus>
+  </header>
+  <!--
+    v-if 和 v-show 都可以用来控制元素的显示和隐藏
+    在 vue 中一共有四个指令用来控制元素显示和隐藏：
+      v-show
+      v-if
+        v-else-if
+        v-else
+      v-if 支持使用 template 标签控制多个元素的渲染，而最终渲染结果不包含 template 节点
+   -->
+  <template v-if="todos.length !== 0">
+    <!-- This section should be hidden by default and shown when there are todos -->
+    <section class="main">
+      <input
+        id="toggle-all"
+        class="toggle-all"
+        @click="toggleAll"
+        type="checkbox">
+      <label for="toggle-all">Mark all as complete</label>
+      <ul class="todo-list">
+        <!-- These are here just to show the structure of the list items -->
+        <!-- List items should get the class `editing` when editing and `completed` when marked as completed -->
+        <!--
+        li 就是每一个任务项
+        li 有三种样式状态：
+          无样式
+          completed 已完成
+          editing 编辑状态
+       -->
+        <!--
+          <li v-bind:class="todo.done ? 'completed' : ''" v-for="todo in todos">
+          Vue 专门增强了 class 的处理
+        -->
+        <li
+          :class="{completed: todo.done, editing: todo === currentEdit}"
+          v-for="todo in filterTodos">
+          <div class="view">
+            <input class="toggle" type="checkbox" v-model="todo.done">
+            <label @dblclick="getEditting(todo)">{{ todo.title }}</label>
+            <button class="destroy" @click="removeTodo(todo.id)"></button>
+          </div>
+          <!--
+            v-bind 只能绑定数据，不能影响数据
+            v-model 才是双向绑定，视图可以影响数据，数据有可以影响视图
+           -->
+          <!-- <input class="edit" v-bind:value="todo.title"> -->
+          <!--
+            这里就是当敲回车或者失去焦点的时候，将当前任务项 todo 的 title 赋值为当前这个文本框的 value，同时去除编辑的样式
+            当取消编辑的时候，我只需要去除编辑的样式即可
+           -->
+          <!--
+            双击 label 的时候，为 input 元素上的 v-todo-focus 传一个值：
+            告诉该指令，当前我双击的是谁。
+           -->
+          <input
+            class="edit"
+            :value="todo.title"
+            v-todo-focus="currentEdit === todo"
+            @keyup.esc="cancelEdit"
+            @keyup.enter="editTodo(todo, $event)"
+            @blur="editTodo(todo, $event)">
+        </li>
+      </ul>
+    </section>
+    <!-- This footer should hidden by default and shown when there are todos -->
+    <footer class="footer">
+      <!-- This should be `0 items left` by default -->
+      <span class="todo-count">
+          <!--
             在 Mustache 中也可以使用方法，但是必须调用
             方法的返回值将会渲染到这里
            -->
-          <!-- <strong>{{ getRemaningCount() }}</strong> item left</span> -->
-          
-          <!-- 
-            过滤器的本质是一个方法，该方法可以在 HTML 模板中通过 | 过滤器名称 的方式来进行调用
-            管道符前面的表达式的计算结果将作为过滤器方法的第一个参数
-            过滤器方法内部返回的数据将渲染到使用过滤器的位置处
-            过滤器依赖于前面表达式，当表达式的结果变了，过滤器就重新执行
-           -->
-          <!-- <strong>{{ todos | getRemaningCount }}</strong> item left</span> -->
+        <!-- <strong>{{ getRemaningCount() }}</strong> item left</span> -->
+
+        <!--
+          过滤器的本质是一个方法，该方法可以在 HTML 模板中通过 | 过滤器名称 的方式来进行调用
+          管道符前面的表达式的计算结果将作为过滤器方法的第一个参数
+          过滤器方法内部返回的数据将渲染到使用过滤器的位置处
+          过滤器依赖于前面表达式，当表达式的结果变了，过滤器就重新执行
+         -->
+        <!-- <strong>{{ todos | getRemaningCount }}</strong> item left</span> -->
           <strong>{{ remaningCount }}</strong> item left</span>
-        <!-- Remove this if you don't implement routing -->
-        <ul class="filters">
-          <li>
-            <a class="selected" href="#/">All</a>
-          </li>
-          <li>
-            <a href="#/active">Active</a>
-          </li>
-          <li>
-            <a href="#/completed">Completed</a>
-          </li>
-        </ul>
-        <!-- Hidden if no completed items are left ↓ -->
-        <button class="clear-completed" @click="clearAllDone">Clear completed</button>
-      </footer>
-    </template>
-  </section>
-  <footer class="info">
-    <p>Double-click to edit a todo</p>
-    <!-- Remove the below line ↓ -->
-    <p>Template by <a href="http://sindresorhus.com">Sindre Sorhus</a></p>
-    <!-- Change this out with your name and url ↓ -->
-    <p>Created by <a href="http://todomvc.com">you</a></p>
-    <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
-  </footer>
-  <!-- Scripts here. Don't remove ↓ -->
-  <!-- <script src="node_modules/todomvc-common/base.js"></script> -->
-  <script src="node_modules/vue/dist/vue.js"></script>
-  <script src="js/app.js"></script>
+      <!-- Remove this if you don't implement routing -->
+      <ul class="filters">
+        <li>
+          <a
+            :class="{selected: routerPath === '/'}"
+            href="#/">All</a>
+        </li>
+        <li>
+          <a
+            :class="{selected: routerPath === '/active'}"
+            href="#/active">Active</a>
+        </li>
+        <li>
+          <a
+            :class="{selected:  routerPath === '/completed'}"
+            href="#/completed">Completed</a>
+        </li>
+      </ul>
+      <!-- Hidden if no completed items are left ↓ -->
+      <button
+        class="clear-completed"
+        v-show="hasDone"
+        @click="clearAllDone">Clear completed</button>
+    </footer>
+  </template>
+</section>
+<footer class="info">
+  <p>Double-click to edit a todo</p>
+  <!-- Remove the below line ↓ -->
+  <p>Template by <a href="http://sindresorhus.com">Sindre Sorhus</a></p>
+  <!-- Change this out with your name and url ↓ -->
+  <p>Created by <a href="http://todomvc.com">you</a></p>
+  <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+</footer>
+<!-- Scripts here. Don't remove ↓ -->
+<!-- <script src="node_modules/todomvc-common/base.js"></script> -->
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="js/todo.js"></script>
+<script src="js/app.js"></script>
 </body>
 
 </html>
