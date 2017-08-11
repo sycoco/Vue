@@ -1,5 +1,5 @@
 .aal-layout {
-    max-width: 640px;
+    /*max-width: 640px;*/
     min-width: 320px;
     width: 100%;
 }
@@ -22,6 +22,7 @@
 }
 .aal-main .logo{
     position: relative;
+    height: 140px;
 }
 .aal-main .logo img{
     position: absolute;
@@ -58,7 +59,7 @@
 }
 .aal-main .aal-search form .icon-search {
     position: absolute;
-    left: 25px;
+    left: 58px;
     top: 10px;
     width: 20px;
     height: 20px;

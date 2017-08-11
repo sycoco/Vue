@@ -12,8 +12,8 @@
             </div>
             <ul class="clearfix">
                 <li><a href="#">我的订单</a></li>
-                <li><a href="#">上新商品</a><i>|</i></li>
-                <li><a href="#">全部商品</a><i>|</i></li>
+                <li><a href="#">上新商品</a><i></i></li>
+                <li><a href="#">全部商品</a><i></i></li>
             </ul>
             <div class="aal-search">
                 <form>
