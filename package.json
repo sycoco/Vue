@@ -2,7 +2,7 @@
   "name": "mall",
   "description": "shopping mall",
   "version": "1.0.0",
-  "author": "huangchen <1440557925@qq.com>",
+  "author": "sy",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
