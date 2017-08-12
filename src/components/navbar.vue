@@ -9,7 +9,7 @@
                 <a href="#">全部商品</a>
             </li>
             <li>
-                <a href="#">购物车</a>
+                <a href="#/shoppingCart">购物车</a>
             </li>
             <li>
                 <a href="#">我的订单</a>

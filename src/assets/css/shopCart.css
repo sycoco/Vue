@@ -1,0 +1,116 @@
+.shop-cart{
+    max-width: 640px;
+    min-width: 320px;
+    /*background-color: #eee;*/
+}
+
+.shop-cart .cart-head{
+    background-color: rgba(112,182,183,0.8);
+    color: #fff;
+    position: relative;
+
+}
+.shop-cart .cart-head a{
+    font-size: 20px;
+    margin-left: 10px;
+    color: #fff;
+}
+.shop-cart .cart-head h3{
+    display: inline-block;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    margin-left: 38%;
+}
+.cart-main .cart-content{
+    text-align: center;
+    margin-top: 30px;
+    color: rgba(0,0,0,0.5)
+}
+.cart-main .cart-content a{
+    display: block;
+    border: 1px solid salmon;
+    color: salmon;
+    width: 50px;
+    margin: 20px auto;
+}
+.cart-main{
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.cart-main .goods-item a .logo-img{
+    width: 32%;
+}
+
+.cart-main .goods-item .iteminfo {
+    margin-top: 18px
+}
+.cart-main .goods-item .iteminfo p{
+    margin-right: 20px;
+}
+
+.cart-main .goods-item .iteminfo ul{
+    margin-left: 50px;
+}
+.cart-main .goods-item .iteminfo ul li{
+    /*position: relative;*/
+    color: salmon;
+    float: left;
+}
+.cart-main .goods-item .iteminfo ul li:nth-child(1){
+    width: 20px;
+    height: 20px;
+    border: 1px solid salmon;
+    font-size: 22px;
+    line-height: 16px;
+    text-align: center;
+    border-radius: 50%;
+}
+.cart-main .goods-item .iteminfo ul li:nth-child(2){
+    font-size: 22px;
+    line-height: 20px;
+    margin:0 10px;
+    color: #333333;
+}
+
+.cart-main .goods-item .iteminfo ul li:nth-child(3){
+    width: 20px;
+    height: 20px;
+    border: 1px solid salmon;
+    font-size: 22px;
+    line-height: 19px;
+    text-align: center;
+    border-radius: 50%;
+}
+.cart-main .goods-item .iteminfo .old{
+    margin-top: 80px;
+    color: salmon;
+}
+#app{
+    position: relative;
+}
+.cart-footer{
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(112,182,183,0.8);
+    color: white;
+    line-height: 60px;
+    /*margin-left: 50px;*/
+}
+.cart-footer span:nth-child(1){
+    margin-left: 30px;
+}
+.cart-footer span:nth-child(2){
+    margin-left: 30px;
+}
+.cart-footer button{
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    right: 18px;
+    bottom: 13px;
+}

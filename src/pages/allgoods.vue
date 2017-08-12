@@ -61,43 +61,8 @@
 
 <style>
     @import '/src/assets/css/base.css';
-    .allgoods{
-        width: 100%;
-        border: n;
-        /*position: relative;*/
-    }
-    .allgoods h2{
-        margin: 10px 20px;
-        height: 40px;
-        line-height: 40px;
-        border-bottom: 1px solid #cccccc;
-    }
-    .aal-goods{
-        padding: 0 20px;
-        position: relative;
-    }
-    .goods-item{
-        margin-top: 30px;
-        border-bottom: 1px solid #cccccc;
-        /*position: relative;*/
+    @import '/src/assets/css/allgoods.css';
 
-    }
-    .goods-item a .logo-img{
-        float: left;
-        width: 60% ;
-    }
-    .iteminfo .new{
-        color: brown;
-    }
-    .iteminfo p{
-        font-size: 20px;
-        margin-bottom: 20px;
-    }
-    .shopping-cart{
-        /*float: right;*/
-        margin-bottom: 20px;
-        margin-left: 280px;
-    }
 
 
 </style>
