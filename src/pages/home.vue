@@ -20,18 +20,7 @@
         <div class="aal-product">
             <ul>
                 <li><a href="#"><img src="../assets/images/bg1.jpg" alt=""/></a></li>
-                <li><a href="#"><img src="../assets/images/bg2.jpg" alt=""/></a></li>
-                <li><a href="#"><img src="../assets/images/bg3.jpg" alt=""/></a></li>
-                <li><a href="#"><img src="../assets/images/bg3.jpg" alt=""/></a></li>
-                <li><a href="#"><img src="../assets/images/bg3.jpg" alt=""/></a></li>
             </ul>
-            <ol>
-                <li class="current"></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ol>
         </div>
         <!--明星产品-->
         <div class="aal-star">
@@ -67,34 +56,11 @@
             <ul>
                 <li>
                     <a href="#">
-                        <p>美容仪器</p>
-                        <img src="../assets/images/ln-big.jpg" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <p>阿玛尼</p>
-                        <img src="../assets/images/amn-big.jpg" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <p>海蓝之谜</p>
-                        <img src="../assets/images/hlzm-big.jpg" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
                         <p>SK-II</p>
                         <img src="../assets/images/sk-big.jpg" alt="">
                     </a>
                 </li>
-                <li>
-                    <a href="#">
-                        <p>希思黎</p>
-                        <img src="../assets/images/xsl-big.jpg" alt="">
-                    </a>
-                </li>
+
                 <li>
                     <a href="#">
                         <p>赫连娜</p>
@@ -113,18 +79,7 @@
                         <img src="../assets/images/cpb.jpg" alt="">
                     </a>
                 </li>
-                <li>
-                    <a href="#">
-                        <p>黛珂</p>
-                        <img src="../assets/images/dk.jpg" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <p>茵芙纱</p>
-                        <img src="../assets/images/ipsa.jpg" alt="">
-                    </a>
-                </li>
+
             </ul>
         </div>
 

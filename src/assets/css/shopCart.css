@@ -37,6 +37,7 @@
 .cart-main{
     padding: 20px;
     box-sizing: border-box;
+    border-bottom: 1px solid #f1f1f1;
 }
 
 .cart-main .goods-item a .logo-img{
@@ -92,25 +93,29 @@
 }
 .cart-footer{
     width: 100%;
-    height: 60px;
     position: fixed;
     bottom: 0;
     left: 0;
-    background-color: rgba(112,182,183,0.8);
-    color: white;
-    line-height: 60px;
-    /*margin-left: 50px;*/
+    font-size: 20px;
+    height: 50px;
+    line-height: 50px;
 }
 .cart-footer span:nth-child(1){
     margin-left: 30px;
 }
 .cart-footer span:nth-child(2){
     margin-left: 30px;
+    color: salmon;
 }
-.cart-footer button{
+.cart-footer a{
     color: white;
-    font-size: 20px;
     position: absolute;
-    right: 18px;
-    bottom: 13px;
+    right: 0px;
+    bottom: 0px;
+    font-size: 18px;
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    background-color: rgba(112,182,183,0.8);
+    text-align: center;
 }

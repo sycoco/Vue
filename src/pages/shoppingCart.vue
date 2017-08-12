@@ -37,12 +37,12 @@
             </div>
 
             <div class="cart-footer">
-            <span>合计</span>
+            <span>合计&nbsp:</span>
             <span>
             <b>￥</b>
             <em>268.00</em>
             </span>
-            <button>立即下单</button>
+            <a>立即下单</a>
             </div>
         </div>
     </div>
