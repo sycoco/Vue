@@ -1,0 +1,59 @@
+.myorders{
+    width: 100%;
+    height: 100%;
+}
+
+.cart-head{
+    color: #fff;
+    position: relative;
+
+}
+.cart-head a{
+    font-size: 20px;
+    margin-left: 10px;
+    color: #fff;
+}
+.cart-head h3{
+    display: inline-block;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    margin-left: 37%;
+
+}
+.order-list{
+
+    padding: 10px 20px 5px 20px;
+    /*box-sizing: border-box;*/
+    border-bottom: 1px solid #cccccc;
+}
+.order-list ul li a.active{
+    border-bottom: 1px solid salmon;
+    color: salmon;
+}
+.order-list ul li{
+
+}
+.order-list ul li a{
+    float: left;
+    width: 16.6%;
+    text-align: center;
+}
+
+.order-goodsinfo{
+    background-color: #f1f1f1;
+    padding: 10px 20px;
+    color: rgba(0,0,0,0.7);
+}
+.order-goodsinfo p{
+    height: 20px;
+    margin-bottom: 10px;
+}
+.order-goodsinfo .goods-item span{
+    color: #cccccc;
+
+}
+.order-goodsinfo .goods-item p{
+    margin-top: 10px;
+    color: salmon;
+}

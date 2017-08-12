@@ -6,13 +6,13 @@
                 <a href="#"><img src="../assets/images/home.png" alt=""></a>
             </li>
             <li>
-                <a href="#">全部商品</a>
+                <a href="#/allgoods">全部商品</a>
             </li>
             <li>
                 <a href="#/shoppingCart">购物车</a>
             </li>
             <li>
-                <a href="#">我的订单</a>
+                <a href="#/myOrders">我的订单</a>
             </li>
         </ul>
     </div>

@@ -4,18 +4,18 @@
     /*background-color: #eee;*/
 }
 
-.shop-cart .cart-head{
+.cart-head{
     background-color: rgba(112,182,183,0.8);
     color: #fff;
     position: relative;
 
 }
-.shop-cart .cart-head a{
+.cart-head a{
     font-size: 20px;
     margin-left: 10px;
     color: #fff;
 }
-.shop-cart .cart-head h3{
+.cart-head h3{
     display: inline-block;
     height: 50px;
     text-align: center;

@@ -11,7 +11,7 @@
                 <img src="../assets/images/logo.jpg" alt="">
             </div>
             <ul class="clearfix">
-                <li><a href="#/shoppingCart">我的订单</a></li>
+                <li><a href="#/myOrders">我的订单</a></li>
                 <li><a href="#/allgoods">上新商品</a><i></i></li>
                 <li><a href="#/allgoods">全部商品</a><i></i></li>
             </ul>

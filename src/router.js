@@ -39,9 +39,9 @@ const routes = [
                 component:require('./pages/shoppingCart.vue')
             },
             {
-                path:'/myorders',
+                path:'/myOrders',
                 name:'myorders',
-                component:require('./pages/myorders.vue')
+                component:require('./pages/myOrders.vue')
             }
         ]
     }
