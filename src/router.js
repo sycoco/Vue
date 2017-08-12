@@ -27,6 +27,16 @@ const routes = [
                 path:'/login',
                 name:'login',
                 component:require('./pages/login.vue')
+            },
+            {
+                path:'/allgoods',
+                name:'allgoods',
+                component:require('./pages/allgoods.vue')
+            },
+            {
+                path:'/shoppingCart',
+                name:'shoppingCart',
+                component:require('./pages/shoppingCart.vue')
             }
         ]
     }

@@ -2,6 +2,7 @@
     /*max-width: 640px;*/
     min-width: 320px;
     width: 100%;
+    position: relative;
 }
 .aal-layout .aal-banner{
     width: 100%;
@@ -22,7 +23,7 @@
 }
 .aal-main .logo{
     position: relative;
-    height: 140px;
+    /*height: 140px;*/
 }
 .aal-main .logo img{
     position: absolute;
@@ -141,7 +142,6 @@
 }
 .aal-footnav {
     position: relative;
-   
     font-size: 16px;
     text-align: center;
     width: 100%;
@@ -167,4 +167,7 @@
 .aal-footnav ul li a img {
     display: block;
     margin: 3px auto;
+}
+#app{
+    position: relative;
 }

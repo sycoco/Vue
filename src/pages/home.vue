@@ -11,16 +11,10 @@
                 <img src="../assets/images/logo.jpg" alt="">
             </div>
             <ul class="clearfix">
-                <li><a href="#">我的订单</a></li>
-                <li><a href="#">上新商品</a><i></i></li>
-                <li><a href="#">全部商品</a><i></i></li>
+                <li><a href="#/shoppingCart">我的订单</a></li>
+                <li><a href="#/allgoods">上新商品</a><i></i></li>
+                <li><a href="#/allgoods">全部商品</a><i></i></li>
             </ul>
-            <div class="aal-search">
-                <form>
-                    <span class="icon-search"></span>
-                    <input type="search" placeholder="搜索商品"/>
-                </form>
-            </div>
         </div>
         <!--产品展示模块-->
         <div class="aal-product">
@@ -133,34 +127,22 @@
                 </li>
             </ul>
         </div>
+
         <!--底部导航-->
-        <div class="aal-footnav ">
-            <ul class="clearfix">
-                <li>
-                    <a href="#"><img src="../assets/images/home.png" alt=""></a>
-                </li>
-                <li>
-                    <a href="#">全部商品</a>
-                </li>
-                <li>
-                    <a href="#">购物车</a>
-                </li>
-                <li>
-                    <a href="#">我的订单</a>
-                </li>
-            </ul>
-        </div>
+        <navbar></navbar>
     </div>
 </template>
 
 <script>
     // ajax 使用官方推荐的 axios
     import axios from 'axios'
+    import Navbar from '../components/navbar.vue'
 
     export default {
         data () {
             return{
                 listArr: [],
+                selected: ""
             }
         },
         created () {
@@ -170,6 +152,9 @@
             loadList: function() {
                 console.log("初始化加载数据开始...");
             }
+        },
+        components :{
+            Navbar
         }
     }
 </script>
